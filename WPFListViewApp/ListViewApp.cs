@@ -27,6 +27,18 @@ namespace WPFListViewApp
 
             l1.Children.Add(listView);
 
+            Button clear = new Button
+            {
+                Text = "Clear List"
+            };
+
+            l1.Children.Add(clear);
+
+            clear.Clicked += (s, e) =>
+            {
+                listView.ItemsSource = new List<string> { "Item 5", "Item 6", "Item 7", "Item 8" }; 
+            };
+
             MainPage = new ContentPage
             {
                 Content = l1
